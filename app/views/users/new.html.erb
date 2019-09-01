@@ -1,0 +1,9 @@
+<%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+    <div class="form-inline login text-white">
+   <%= f.label :email %><br>
+<p><%= f.email_field :Email, class: "form-control mx-2" %></p>
+<%= f.label :password %><br>
+<p><%= f.password_field :password, class: "form-control mx-2"%></p>
+<p><%= f.submit "Log in", class: "btn btn-primary" %></p>
+<%end%></div>
+<%= render 'form', user: @user %>

@@ -1,0 +1,41 @@
+<%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="card card1 border-light" style="width:500px">
+  <div class="card-header"> <h3>Sign Up</h3>
+  It’s quick and easy.</div>
+  <div class="card-body bg-light"><div class="field">
+  <%= form.text_field :First_Name, placeholder: "First Name", class:"form-control mb-2 mr-sm-2" %>
+</div>
+
+<div class="field">
+  <%= form.text_field :Second_name, placeholder: "Second Name", class:"form-control mb-2 mr-sm-2" %>
+</div>
+
+<div class="field">
+  <%= form.text_field :Email, placeholder: "Email", class:"form-control mb-2 mr-sm-2" %>
+</div>
+
+<div class="field">
+  <%= form.password_field :password, placeholder: "password", class:"form-control mb-2 mr-sm-2" %>
+</div>
+
+<div class="field">
+  <%= form.password_field :password_confirmation, placeholder: "password_confirmation", class:"form-control mb-2 mr-sm-2" %>
+</div>
+</div> 
+  <div class="card-footer"> 
+  <div class="actions">
+  <%= form.submit %>
+</div></div>
+</div>
+<% end %>

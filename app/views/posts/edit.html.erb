@@ -1,0 +1,9 @@
+<div class="card cardnp" style="width:600px" >
+  <div class="card-body">
+    <h1 class="card-title">Editing Post</h1>
+    <%= render 'form', post: @post %>
+    <%= link_to 'Show', @post, class:"card-link btn btn-info" %>
+    <%= link_to 'Back', posts_path, class:"card-link btn btn-warning" %>
+  </div>
+</div>
+

@@ -1,0 +1,31 @@
+<% if logged_in? %>
+<% check = 0, links='1', id=nil %>
+<% @posts.each do |post| %>
+<% if current_user.id == post.user_id %>
+  <% check = 1%>
+  <%links = post.image.url %>
+  <%id =post%>
+<% end %>
+<% end %>
+<% end %>
+<%= link_to 'Create Post', new_post_path , class: "newp btn btn-light"%>
+  <p id="notice"><%= notice %></p>
+  <% @posts.each do |post| %>    
+<div class="card cardip m-2" style="width:500px">
+  <div class="card-header"> <h1>Post</h1>
+  <hr>
+  <%= post.user.First_Name %>
+  <%= post.user.Second_name %>
+  </div>
+  <div class="card-body">
+  <%= post.content %><br>
+  <%= image_tag post.image.url %>
+  
+  </div> 
+  <div class="card-footer" >
+  <%= link_to 'Show', post, class: "col-sm-8 m-5" %>
+  <%= link_to 'Edit', edit_post_path(post), class: "col-sm-10 m-5" %>
+  <%= link_to 'Delete', post,class: "col-sm-10 m-5", method: :delete, data: { confirm: 'Are you sure?' } %></div>
+</div>
+<% end %>
+<br>

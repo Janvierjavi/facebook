@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+<h1>Users</h1>
+    <% @users.each do |user| %>
+      <%= user.First_Name %>
+        <%= user.Second_name %>
+        <%= user.Email %>
+        <%= link_to 'Edit', edit_user_path(user) %>
+    <% end %>
+<br>
+<%= link_to 'Sing_Up', new_user_path %>
