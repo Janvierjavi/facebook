@@ -19,7 +19,10 @@
   </div>
   <div class="card-body">
   <%= post.content %><br>
+  <% if post.image.present? %>
   <%= image_tag post.image.url %>
+  <% end %>
+  
   </div> 
   <div class="card-footer" >
   <%= link_to 'Show', post, class: "col-sm-8 m-5" %>
