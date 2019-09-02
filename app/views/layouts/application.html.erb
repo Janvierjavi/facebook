@@ -31,19 +31,6 @@
     <%= content_tag(:div, value, class: "#{key}") %>
   <% end %>
  </nav>
- <% if logged_in? %>
- <div class="logg">
- <i class="fab fa-facebook-messenger m-2"></i>
- <i class="fas fa-user-friends m-2"></i>
-<%= link_to "Profile", user_path(current_user.id), class: "btn btn-info fas fa-user-circle" %>
-    <%= link_to "Logout", session_path(current_user.id),class: " btn btn-info fas fa-sign-out-alt", method: :delete %>
-    </div>
-  <% else %> 
-  <div class="logg">
-  <%= link_to "Sign up", new_user_path, class: "btn btn-info fas fa-user-plus" %>
-  <%= link_to "Login", new_session_path, class: "btn btn-info fas fa-sign-in-alt" %>
-  </div>
-  <% end %>
 
   <%= yield %>
 

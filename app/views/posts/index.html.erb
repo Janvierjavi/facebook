@@ -30,4 +30,11 @@
   <%= link_to 'Delete', post,class: "col-sm-10 m-5", method: :delete, data: { confirm: 'Are you sure?' } %></div>
 </div>
 <% end %>
-<br>
+<% if logged_in? %>
+<div class="logg">
+ <i class="fab fa-facebook-messenger m-2"></i>
+ <i class="fas fa-user-friends m-2"></i>
+<%= link_to "Profile", user_path(current_user.id), class: "btn btn-info fas fa-user-circle" %>
+    <%= link_to "Logout", session_path(current_user.id),class: " btn btn-info fas fa-sign-out-alt", method: :delete %>
+    </div>
+<%end>
