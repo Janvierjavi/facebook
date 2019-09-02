@@ -13,14 +13,13 @@
   <% @posts.each do |post| %>    
 <div class="card cardip m-2" style="width:500px">
   <div class="card-header"> <h1>Post</h1>
-  <hr>
+  <hr> 
   <%= post.user.First_Name %>
   <%= post.user.Second_name %>
   </div>
   <div class="card-body">
   <%= post.content %><br>
   <%= image_tag post.image.url %>
-  
   </div> 
   <div class="card-footer" >
   <%= link_to 'Show', post, class: "col-sm-8 m-5" %>
