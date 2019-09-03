@@ -21,12 +21,13 @@
   <%= post.content %><br>
   <%= image_tag post.image.url %>
   </div> 
-  
-<% if logged_in? %>
+
+  <% if logged_in? %>
+  <% if current_user.id == post.user.id %>
 <div class="card-footer" >
-  <%= link_to 'Show', post, class: "col-sm-8 m-5" %>
-  <%= link_to 'Edit', edit_post_path(post), class: "col-sm-10 m-5" %>
-  <%= link_to 'Delete', post,class: "col-sm-10 m-5", method: :delete, data: { confirm: 'Are you sure?' } %></div>
+<%= link_to 'Show', post, class: "col-sm-8 m-5" %>
+<%= link_to 'Edit', edit_post_path(post), class: "col-sm-10 m-5" %>
+<%= link_to 'Delete', post,class: "col-sm-10 m-5", method: :delete, data: { confirm: 'Are you sure?' } %></div>
 </div>
 <div class="logg">
  <i class="fab fa-facebook-messenger m-2"></i>
@@ -34,5 +35,6 @@
 <%= link_to "Profile", user_path(current_user.id), class: "btn btn-info fas fa-user-circle" %>
     <%= link_to "Logout", session_path(current_user.id),class: " btn btn-info fas fa-sign-out-alt", method: :delete %>
     </div>
-<%end%>
+    <% end%>
 <% end %>
+<%end%>
