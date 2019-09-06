@@ -7,8 +7,9 @@
    <%= link_to "Logout", session_path(current_user.id),class: " btn btn-info fas fa-sign-out-alt", method: :delete %>
    </div>
    <%= link_to 'Create Post', new_post_path , class: "newp btn btn-light"%> 
+   <h1>Post</h1>
 <% @posts.each do |post| %>
-  <h1>Post</h1>
+ 
   <div class="card cardip m-2" style="width:500px">
   <div class="card-header"> 
   <hr> 
