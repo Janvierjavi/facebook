@@ -1,6 +1,11 @@
 body{
     position: relative;
 }
+.images{
+    width:200px;
+    height: 200px;
+    border-radius: 40px;
+}
 .nav1{ 
     background-color: blue
 }

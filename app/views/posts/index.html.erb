@@ -26,7 +26,7 @@
   </div>
   <div class="card-body">
   <%= post.content %><br>
-  <%= image_tag post.image.url %>
+  <%= image_tag post.image.url, class: "images" %>
   </div> 
   <% if logged_in? %>
   <% if current_user.id == post.user.id %>
