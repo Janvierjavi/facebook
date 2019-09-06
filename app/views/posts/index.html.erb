@@ -8,9 +8,10 @@
    </div>
    <%= link_to 'Create Post', new_post_path , class: "newp btn btn-light"%> 
    <h1>Post</h1>
-<% @posts.each do |post| %>
+
  
   <div class="card cardip m-2" style="width:500px">
+  <% @posts.each do |post| %>
   <div class="card-header"> 
   <hr> 
   <%= post.user.First_Name %>
